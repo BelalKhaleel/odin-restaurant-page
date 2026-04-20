@@ -1,7 +1,7 @@
 import path from "node:path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
-module.exports = {
+export default {
   entry: './src/index.js',
   mode: 'development',
   devServer: {
@@ -14,7 +14,8 @@ module.exports = {
   ],
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(import.meta.dirname, "dist"),
+    clean: true,
   },
   module: {
     rules: [
