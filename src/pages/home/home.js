@@ -1,10 +1,11 @@
+import restaurantImage from "../../images/restaurant.jpeg";
+
 export default function renderHomePageContent(node) {
-  
   const h1 = document.createElement('h1');
   h1.textContent = 'Welcome to our Restaurant!';
   
   const img = document.createElement('img');
-  img.setAttribute('src', 'https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  img.src = restaurantImage;
   img.setAttribute('alt', 'empty restaurant');
   
   const p = document.createElement('p');

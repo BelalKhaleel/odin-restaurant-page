@@ -1,26 +1,25 @@
-import renderHomePageContent from "./home/home";
-import renderAboutPageContent from "./about/about";
-import renderMenuContentPage from "./menu/menu";
+import renderHomePageContent from "./pages/home/home.js";
+import renderAboutPageContent from "./pages/about/about.js";
+import renderMenuContentPage from "./pages/menu/menu.js";
 import './style.css';
 
 const divContent = document.querySelector('#content');
 const nav = document.querySelector('nav');
-nav.classList.add('navbar');
-const buttons = document.querySelectorAll('button');
-
-buttons.forEach(button => button.classList.add('button'));
 
 renderHomePageContent(divContent);
 
 nav.addEventListener('click', e => {
-  if (e.target.textContent === 'Home') {
-    divContent.replaceChildren();
-    renderHomePageContent(divContent);
-  } else if (e.target.textContent === 'About') {
-    divContent.replaceChildren();
-    renderAboutPageContent(divContent)
-  } else if (e.target.textContent === 'Menu') {
-    divContent.replaceChildren();
-    renderMenuContentPage(divContent)
+  switch (e.target.textContent) {
+    case "About":
+      divContent.replaceChildren();
+      renderAboutPageContent(divContent);
+      break;
+    case "Menu":
+      divContent.replaceChildren();
+      renderMenuContentPage(divContent);
+      break;
+    default:
+      divContent.replaceChildren();
+      renderHomePageContent(divContent);
   }
-})
+});

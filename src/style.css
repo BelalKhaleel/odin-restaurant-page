@@ -2,12 +2,14 @@ body {
   padding: 1em 7em;
 }
 
-.navbar {
+nav {
   display: flex;
   justify-content: center;
   gap: 2em;
+  pointer-events: none;
 }
 
-.button {
+button {
   cursor: pointer;
+  pointer-events: auto;
 }
